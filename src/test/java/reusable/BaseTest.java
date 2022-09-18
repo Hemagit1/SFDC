@@ -32,15 +32,22 @@ public class BaseTest {
 	public static Logger logger = LogManager.getLogger(BaseTest.class.getName());
 	public static ExtentReports extent;
 	public static ExtentTest test;
+	
+	/*
+	 * public BaseTest (WebDriver driver) { this.driver = driver;
+	 * 
+	 * }
+	 */
 
 	// Invoke Browser using below method
-	public static WebDriver getBrowser(String Browser_name) {
-		String Browser = Browser_name.toLowerCase();
+	public static WebDriver getBrowser(String Browsername) {
+		String Browser = Browsername.toLowerCase();
 
 		switch (Browser) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
+			logger.info("Browser loaded succesfully");
 			break;
 
 		case "firefox":
@@ -82,10 +89,10 @@ public class BaseTest {
 	public static boolean waitForElement(WebDriver driver, WebElement element) {
 
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 20);
+			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.visibilityOf(element));
 			return true;
-		}
+			}
 
 		catch (Exception e) {
 			e.getMessage();
@@ -113,7 +120,11 @@ public class BaseTest {
 		return destinationpath;
 	}
 	
-	
+	public void iFrame(WebElement element)
+	{
+		driver.switchTo().frame(element);
+		System.out.print("Passssss");
+	}
 	
 	
 	

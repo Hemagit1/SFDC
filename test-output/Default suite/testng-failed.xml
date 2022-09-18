@@ -3,17 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SFDC.com.LoginTest">
+      <class name="SFDC.com.profileTest">
         <methods>
-          <include name="driverIni"/>
+          <include name="driverInt"/>
           <include name="extentEnd"/>
-          <include name="Call_extent"/>
-          <include name="end_extent"/>
-          <include name="checkRememberme"/>
+          <include name="AboutTabLastName"/>
           <include name="extentReport"/>
-          <include name="close"/>
         </methods>
-      </class> <!-- SFDC.com.LoginTest -->
+      </class> <!-- SFDC.com.profileTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
